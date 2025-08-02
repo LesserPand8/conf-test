@@ -1,0 +1,56 @@
+/* 共通ヘッダースタイル */
+.header {
+    background-color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.header h1 {
+    color: #8b7355;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+/* ログイン・レジスター用リンク */
+.login-link {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.login-link a {
+    color: #8b7355;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: 1px solid #8b7355;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.login-link a:hover {
+    background-color: #8b7355;
+    color: white;
+}
+
+/* 認証後のログアウトボタン */
+.header-nav__button {
+    color: #8b7355;
+    background: transparent;
+    border: 1px solid #8b7355;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.header-nav__button:hover {
+    background-color: #8b7355;
+    color: white;
+}

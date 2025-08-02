@@ -1,0 +1,511 @@
+/* 管理者ページ用CSS */
+
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.admin-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.admin-header h2 {
+    color: #8b7355;
+    font-size: 28px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.search-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.search-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-row:first-child {
+    justify-content: space-between;
+}
+
+.search-row:last-child {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.search-item:first-child {
+    flex: 2;
+}
+
+.search-item:nth-child(2) {
+    flex: 0.4; /* 性別：さらに狭く */
+}
+
+.search-item:nth-child(3) {
+    flex: 1.8; /* お問い合わせの種類：さらに広く */
+}
+
+.search-item:nth-child(4) {
+    flex: 0.6; /* 年月日：さらに狭く */
+}
+
+.search-item:nth-child(5),
+.search-item:nth-child(6) {
+    flex: 0;
+    min-width: auto;
+}
+
+.search-item:last-child {
+    flex: 0;
+}
+
+.search-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    min-width: 200px;
+}
+
+.search-select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    font-size: 14px;
+    width: 100%;
+    min-width: 120px;
+}
+
+/* 性別セレクトボックス用の特別な設定 */
+.search-item:nth-child(2) .search-select {
+    min-width: 80px;
+}
+
+/* お問い合わせの種類セレクトボックス用の特別な設定 */
+.search-item:nth-child(3) .search-select {
+    min-width: 200px;
+}
+
+/* 年月日入力用の特別な設定 */
+.search-item:nth-child(4) .search-input {
+    min-width: 140px;
+}
+
+.search-btn {
+    background: #8b7355;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    min-width: 100px;
+    height: 34px;
+}
+
+.search-btn:hover {
+    background: #7a6348;
+}
+
+.reset-btn {
+    background: #6c757d;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 100px;
+    text-align: center;
+    height: 34px;
+    line-height: 16px;
+    box-sizing: border-box;
+}
+
+.reset-btn:hover {
+    background: #5a6268;
+    color: white;
+    text-decoration: none;
+}
+
+.export-btn {
+    margin: 0;
+    text-align: left;
+}
+
+.export-btn .search-btn {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.export-btn .search-btn:hover {
+    text-decoration: none;
+}
+
+.export-pagination-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
+
+.pagination-wrapper {
+    margin-left: auto;
+}
+
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+}
+
+.contact-table th {
+    background: #8b7355;
+    color: white;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.contact-table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+}
+
+.contact-table tr:last-child td {
+    border-bottom: none;
+}
+
+.contact-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.delete-btn {
+    background: #8b7355;
+    color: white;
+    padding: 4px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    background: #7a6348;
+}
+
+.detail-btn {
+    background: #8b7355;
+    color: white;
+    padding: 4px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.detail-btn:hover {
+    background: #7a6348;
+}
+
+/* モーダルウィンドウのスタイル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 3% auto;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: transparent;
+    color: #333;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #999;
+    font-size: 24px;
+    font-weight: normal;
+    cursor: pointer;
+    line-height: 1;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close:hover {
+    color: #666;
+}
+
+.modal-body {
+    padding: 60px 40px 30px 40px;
+}
+
+.detail-row {
+    display: table;
+    width: 100%;
+    margin-bottom: 16px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.detail-label {
+    display: table-cell;
+    width: 180px;
+    color: #333;
+    font-size: 14px;
+    padding: 10px 30px 10px 0;
+    vertical-align: top;
+    text-align: left;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.detail-value {
+    display: table-cell;
+    color: #333;
+    font-size: 14px;
+    padding: 10px 0;
+    vertical-align: top;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.modal-footer {
+    padding: 30px 40px 40px 40px;
+    text-align: center;
+    border-top: none;
+}
+
+.modal-footer .delete-btn {
+    background: #ff6b35;
+    color: white;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.modal-footer .delete-btn:hover {
+    background: #e55a2b;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    margin: 0;
+}
+
+.pagination .page-item {
+    margin: 0;
+}
+
+.pagination .page-link {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    background: white;
+    font-size: 14px;
+    min-width: 40px;
+    text-align: center;
+    display: block;
+}
+
+.pagination .page-link:hover {
+    background: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+}
+
+.pagination .page-item.active .page-link {
+    background: #8b7355;
+    color: white;
+    border-color: #8b7355;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #6c757d;
+    background-color: #fff;
+    border-color: #dee2e6;
+    cursor: not-allowed;
+}
+
+.pagination a,
+.pagination span {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    background: white;
+    font-size: 14px;
+    min-width: 40px;
+    text-align: center;
+    display: inline-block;
+}
+
+.pagination a:hover {
+    background: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background: #8b7355;
+    color: white;
+    border-color: #8b7355;
+}
+
+.pagination .disabled {
+    color: #6c757d;
+    background-color: #fff;
+    border-color: #dee2e6;
+    cursor: not-allowed;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .search-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-row:first-child {
+        justify-content: flex-start;
+    }
+
+    .search-item {
+        width: 100%;
+    }
+
+    .search-input,
+    .search-select {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .contact-table {
+        font-size: 12px;
+    }
+
+    .contact-table th,
+    .contact-table td {
+        padding: 8px 4px;
+    }
+
+    /* モーダルのレスポンシブ対応 */
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        max-width: 400px;
+    }
+
+    .modal-body {
+        padding: 0 25px 20px 25px;
+    }
+
+    .detail-row {
+        margin-bottom: 12px;
+    }
+
+    .detail-label {
+        width: 140px;
+        font-size: 13px;
+        padding: 8px 20px 8px 0;
+        white-space: nowrap;
+    }
+
+    .detail-value {
+        font-size: 13px;
+        padding: 8px 0;
+    }
+
+    .modal-footer {
+        padding: 20px 25px 30px 25px;
+    }
+
+    .close {
+        right: 10px;
+        top: 10px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-container {
+        padding: 10px;
+    }
+
+    .contact-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}

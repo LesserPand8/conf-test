@@ -33,11 +33,16 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--name">
-                            <input type="text" name="last_name" placeholder="例:山田" value="{{ request('last_name') }}" />
-                            <input type="text" name="first_name" placeholder="例:太郎" value="{{ request('first_name') }}" />
+                            <input type="text" name="last_name" placeholder="例:山田" value="{{ old('last_name') }}" />
+                            <input type="text" name="first_name" placeholder="例:太郎" value="{{ old('first_name') }}" />
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            @error('last_name')
+                            <div class="form__error-message">{{ $message }}</div>
+                            @enderror
+                            @error('first_name')
+                            <div class="form__error-message">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -48,12 +53,14 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--text">
-                            <input type="radio" name="gender" value="male" {{ request('gender') == 'male' || !request('gender') ? 'checked' : '' }} /> 男性
-                            <input type="radio" name="gender" value="female" {{ request('gender') == 'female' ? 'checked' : '' }} /> 女性
-                            <input type="radio" name="gender" value="other" {{ request('gender') == 'other' ? 'checked' : '' }} /> その他
+                            <input type="radio" name="gender" value="male" {{ old('gender') == 'male' || !old('gender') ? 'checked' : '' }} /> 男性
+                            <input type="radio" name="gender" value="female" {{ old('gender') == 'female' ? 'checked' : '' }} /> 女性
+                            <input type="radio" name="gender" value="other" {{ old('gender') == 'other' ? 'checked' : '' }} /> その他
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            @error('gender')
+                            <div class="form__error-message">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -64,10 +71,12 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--text">
-                            <input type="email" name="email" placeholder="test@example.com" value="{{ request('email') }}" />
+                            <input type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}" />
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            @error('email')
+                            <div class="form__error-message">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -78,14 +87,22 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--text">
-                            <input type="tel" name="tel[0]" placeholder="090" value="{{ request('tel.0') }}" />
+                            <input type="tel" name="tel[0]" placeholder="090" value="{{ old('tel.0') }}" />
                             <span class="form__label--hyphen">-</span>
-                            <input type="tel" name="tel[1]" placeholder="123" value="{{ request('tel.1') }}" />
+                            <input type="tel" name="tel[1]" placeholder="123" value="{{ old('tel.1') }}" />
                             <span class="form__label--hyphen">-</span>
-                            <input type="tel" name="tel[2]" placeholder="4567" value="{{ request('tel.2') }}" />
+                            <input type="tel" name="tel[2]" placeholder="4567" value="{{ old('tel.2') }}" />
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            @error('tel.0')
+                                <div class="form__error-message">{{ $message }}</div>
+                            @enderror
+                            @error('tel.1')
+                                <div class="form__error-message">{{ $message }}</div>
+                            @enderror
+                            @error('tel.2')
+                                <div class="form__error-message">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -96,7 +113,12 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--textarea">
-                            <textarea name="address" placeholder="例:東京都千代田区1-1-1">{{ request('address') }}</textarea>
+                            <textarea name="address" placeholder="例:東京都千代田区1-1-1">{{ old('address') }}</textarea>
+                        </div>
+                        <div class="form__error">
+                            @error('address')
+                            <div class="form__error-message">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -106,7 +128,12 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--textarea">
-                            <textarea name="building" placeholder="例:グランデュオ蒲田">{{ request('building') }}</textarea>
+                            <textarea name="building" placeholder="例:グランデュオ蒲田">{{ old('building') }}</textarea>
+                        </div>
+                        <div class="form__error">
+                            @error('building')
+                            <div class="form__error-message">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -118,13 +145,18 @@
                     <div class="form__group-content">
                         <div class="form__input--textarea">
                             <select name="category_id">
-                                <option value="" disabled {{ !request('category_id') ? 'selected' : '' }}>選択してください</option>
+                                <option value="" disabled {{ !old('category_id') ? 'selected' : '' }}>選択してください</option>
                                 @foreach($categories as $category)
-                                    <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>
-                                        {{ $category->content }}
-                                    </option>
+                                <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                                    {{ $category->content }}
+                                </option>
                                 @endforeach
                             </select>
+                        </div>
+                        <div class="form__error">
+                            @error('category_id')
+                            <div class="form__error-message">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -135,7 +167,12 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--textarea">
-                            <textarea name="detail" placeholder="資料をいただきたいです">{{ request('detail') }}</textarea>
+                            <textarea name="detail" placeholder="資料をいただきたいです">{{ old('detail') }}</textarea>
+                        </div>
+                        <div class="form__error">
+                            @error('detail')
+                            <div class="form__error-message">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
