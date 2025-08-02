@@ -1,0 +1,78 @@
+/* Thanks page styles */
+body {
+    background-color: #f8f8f8;
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic",
+        "Meiryo", sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.thanks__background-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    font-weight: bold;
+    color: rgba(200, 200, 200, 0.1);
+    pointer-events: none;
+    z-index: 1;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.thanks__content {
+    max-width: 500px;
+    width: 90%;
+    padding: 60px 40px;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    position: relative;
+    z-index: 2;
+}
+
+.thanks__heading {
+    margin-bottom: 50px;
+}
+
+.thanks__heading h2 {
+    color: #333;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.thanks__button {
+    margin-top: 0;
+}
+
+.thanks__button-submit {
+    display: inline-block;
+    background-color: #8b7355;
+    color: #fff;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    letter-spacing: 0.1em;
+}
+
+.thanks__button-submit:hover {
+    background-color: #7a634a;
+}

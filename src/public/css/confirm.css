@@ -1,0 +1,240 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", "Helvetica", "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans", "BIZ UDPGothic", "Meiryo", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.header__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8b4513;
+    text-decoration: none;
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.confirm__content {
+    padding: 0;
+}
+
+.confirm__heading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.confirm__heading h2 {
+    font-size: 2rem;
+    color: #8b4513;
+    font-weight: normal;
+}
+
+/* Form Styles */
+.form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Confirm Table Styles */
+.confirm-table {
+    margin-bottom: 2rem;
+}
+
+.confirm-table__inner {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.confirm-table__row {
+    border-bottom: 1px solid #ccc;
+}
+
+.confirm-table__row:last-child {
+    border-bottom: none;
+}
+
+.confirm-table__header {
+    width: 200px;
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    vertical-align: middle;
+    background-color: #d4af8c;
+    font-weight: normal;
+    color: #333;
+    font-size: 0.95rem;
+    border-right: 1px solid #ccc;
+}
+
+.confirm-table__text {
+    padding: 1.2rem 1.5rem;
+    vertical-align: middle;
+    background-color: #fff;
+}
+
+.confirm-table__text input {
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 0.95rem;
+    color: #333;
+    outline: none;
+    cursor: default;
+    font-family: inherit;
+    line-height: 1.4;
+}
+
+.confirm-table__text input[readonly] {
+    background: transparent;
+}
+
+/* Submit Button */
+.form__button {
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.form__button-submit {
+    background-color: #8b4513;
+    color: white;
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 3px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form__button-back {
+    background-color: #6c757d;
+    color: white;
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 3px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form__button-submit:hover {
+    background-color: #a0522d;
+}
+
+.form__button-submit:active {
+    background-color: #6b3410;
+}
+
+.form__button-back:hover {
+    background-color: #5a6268;
+}
+
+.form__button-back:active {
+    background-color: #495057;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header__inner,
+    main {
+        padding: 0 1rem;
+    }
+
+    .confirm__content {
+        padding: 0;
+    }
+
+    .confirm__heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .confirm-table__inner {
+        display: block;
+    }
+
+    .confirm-table__row {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .confirm-table__header {
+        display: block;
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        background-color: #d4af8c;
+        color: #333;
+    }
+
+    .confirm-table__text {
+        display: block;
+        padding: 0.75rem 1rem;
+        background-color: #fff;
+    }
+
+    .form__button {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .form__button-submit,
+    .form__button-back {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .confirm__heading h2 {
+        font-size: 1.25rem;
+    }
+
+    .confirm-table__header {
+        font-size: 0.9rem;
+    }
+
+    .confirm-table__text input {
+        font-size: 0.9rem;
+    }
+}

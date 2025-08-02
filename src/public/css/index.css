@@ -1,0 +1,306 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", "Helvetica", "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans", "BIZ UDPGothic", "Meiryo", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.header__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8b4513;
+    text-decoration: none;
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.contact-form__content {
+    padding: 0;
+}
+
+.contact-form__heading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-form__heading h2 {
+    font-size: 2rem;
+    color: #8b4513;
+    font-weight: normal;
+}
+
+/* Form Styles */
+.form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form__group {
+    margin-bottom: 2rem;
+    display: table;
+    width: 100%;
+}
+
+.form__group-title {
+    display: table-cell;
+    vertical-align: top;
+    width: 250px;
+    padding-right: 2rem;
+    padding-top: 0.75rem;
+}
+
+.form__label--item {
+    font-weight: normal;
+    color: #8b4513;
+    margin-right: 0.25rem;
+    font-size: 1rem;
+}
+
+.form__label--required {
+    color: #e74c3c;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.form__group-content {
+    display: table-cell;
+    vertical-align: top;
+    width: auto;
+}
+
+/* Input Styles */
+.form__input--text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form__input--name {
+    display: flex;
+    gap: 1rem;
+}
+
+.form__input--name input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f5f5f5;
+}
+
+.form__input--name input:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+.form__input--text input[type="text"],
+.form__input--text input[type="email"],
+.form__input--text input[type="tel"] {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f5f5f5;
+    width: 100%;
+}
+
+.form__input--text input[type="text"]:focus,
+.form__input--text input[type="email"]:focus,
+.form__input--text input[type="tel"]:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+/* Phone number specific styling */
+.form__input--text input[type="tel"] {
+    max-width: 80px;
+    text-align: center;
+}
+
+.form__label--hyphen {
+    color: #666;
+    font-weight: bold;
+}
+
+/* Radio button styles */
+.form__input--text input[type="radio"] {
+    margin-right: 0.5rem;
+    margin-left: 1rem;
+}
+
+.form__input--text input[type="radio"]:first-child {
+    margin-left: 0;
+}
+
+/* Textarea and Select Styles */
+.form__input--textarea {
+    width: 100%;
+}
+
+.form__input--textarea textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f5f5f5;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form__input--textarea textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+.form__input--textarea select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.form__input--textarea select:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+/* Placeholder styling */
+input::placeholder,
+textarea::placeholder {
+    color: #999;
+}
+
+select option:disabled {
+    color: #999;
+}
+
+/* Error message placeholder */
+.form__error {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Submit Button */
+.form__button {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.form__button-submit {
+    background-color: #8b4513;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form__button-submit:hover {
+    background-color: #a0522d;
+}
+
+.form__button-submit:active {
+    background-color: #6b3410;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header__inner,
+    main {
+        padding: 0 1rem;
+    }
+
+    .contact-form__content {
+        padding: 0;
+    }
+
+    .contact-form__heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .form__group {
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+
+    .form__group-title {
+        display: block;
+        width: auto;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .form__group-content {
+        display: block;
+        width: auto;
+    }
+
+    .form__input--text {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+    }
+
+    .form__input--name {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form__input--text input[type="tel"] {
+        max-width: none;
+        text-align: left;
+    }
+
+    .form__label--hyphen {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .form__input--text input[type="radio"] {
+        margin-left: 0;
+        margin-right: 0.25rem;
+        margin-bottom: 0.5rem;
+    }
+}
